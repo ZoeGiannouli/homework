@@ -1,0 +1,85 @@
+1) ΥΠΟΛΟΓΙΣΜΟΣ ΜΕΣΟΥ ΟΡΟΥ
+calculate_mean <- function(numbers) {
+ return(mean(numbers))
+}
+calculate_mean(c(10,20,30)) #δίνει 20
+[1] 20
+
+2) ΥΠΟΛΟΓΙΣΜΟΣ ΔΥΝΑΜΗΣ
+power <- function(x,y) {
+ return(x^y)
+}
+result <- power(2,3) #επιστρέφει 8
+print(result)
+[1] 8
+
+3) ΕΛΕΓΧΟΣ ΠΡΟΣΗΜΟΥ
+theNumIs <- function(num) {
+    if (num > 0) {
+      print('θετικός')
+    } else if(num < 0) {
+      print('αρνητικός')
+    } else {
+      print('μηδέν')
+    }
+}
+theNumIs(-5)
+[1] 'αρνητικός'
+
+4)ΜΕΤΡΗΣΗ ΛΕΞΕΩΝ ΣΕ ΠΡΟΤΑΣΗ
+word_count <- function(sentence) {
+ words <- strsplit(sentence, " ") [[1]]
+  return(length(words))
+}
+word_count("Η R είναι υπέροχη!") #4
+[1] 4
+
+5)ΑΝΤΙΣΤΡΟΦΗ ΣΕΙΡΑ ΑΡΙΘΜΩΝ
+reverse_numbers <- function(numbers) {
+   return(rev(numbers))
+}
+reverse_numbers(c(1,2,3,4)) # [1] 4 3 2 1
+[1] 4 3 2 1
+
+6) ΠΛΗΘΟΣ ΑΡΤΙΩΝ ΑΡΙΘΜΩΝ
+find_even_numbers <- function(numbers) {
+ even_numbers <- numbers[numbers %% 2 == 0]
+ print(unique(even_numbers))
+}
+find_even_numbers (c(1,2,2,3,4,4,5)) #2 4
+[1] 2 4
+
+7) ΕΥΡΕΣΗ ΚΟΙΝΩΝ ΣΤΟΙΧΕΙΩΝ 
+common_elements <- function(vec1, vec2) {
+    return(intersect(vec1, vec2))
+ }
+ common_elements(c(1, 2, 3), c(3, 4, 5))  #3
+[1] 3
+
+8) ΑΝΑΜΕΙΞΗ ΣΤΟΙΧΕΙΩΝ VECTOR
+shuffle <- function(vec) {
+  print(sample(vec))
+}
+shuffle (c(1,2,3,4,5)) #Τα στοιχεία ανακατεύονται
+[1] 1 3 5 4 2
+
+9) ΑΘΡΟΙΣΜΑ ΨΗΦΙΩΝ ΑΡΙΘΜΟΥ
+sum_digits <- function(n) {
+sum <- 0
+  while(n > 0) {
+sum <- sum + n %% 10
+n <- n %/% 10
+}
+print(sum)
+}
+sum_digits(1234) # 1 + 2 + 3 + 4 = 10
+[1] 10
+
+10) ΛΕΞΗ ΜΕ ΠΕΡΙΣΣΟΤΕΡΟΥΣ ΧΑΡΑΚΤΗΡΕΣ
+longest_word <- function(words) {
+ word_lengths <- nchar(words)
+ avg_length <- mean(word_lengths)
+return(words[word_lengths > avg_length])
+}
+longest_word (c('apple', 'banana', 'cherry', 'strawberry', 'kiwi', 'pineapple')) # 'strawberry' 'pineapple'
+[1] strawberry pineapple
